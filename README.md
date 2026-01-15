@@ -71,10 +71,9 @@
 
 ## 📂 Projects
 
-**Financial Event-Driven Market Impact System**  
-LLM 기반 금융 뉴스 이벤트 → FX & 섹터 영향도 분석 시스템  
-FastAPI · Postgres · LLM · Rule Engine · Heatmap Dashboard
-[![Financial Event Driven Market Impact System](https://raw.githubusercontent.com/0206pdh/Financial-Event-Driven-Market-Impact-System/master/assets/preview.png)](https://github.com/0206pdh/Financial-Event-Driven-Market-Impact-System)
+ **Financial Event-Driven Market Impact System**  
+  🔗 https://github.com/0206pdh/Financial-Event-Driven-Market-Impact-System
+
 
 
 
