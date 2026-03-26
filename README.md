@@ -69,18 +69,6 @@
 
 ---
 
-## 📂 Projects
-
- **Financial Event-Driven Market Impact System**  
-  🔗 https://github.com/0206pdh/Financial-Event-Driven-Market-Impact-System
-  
- **tax calculation on online for free**
-  🔗 https://github.com/0206pdh/serverless-tax-calculate/tree/main
-
-
-
----
-
 ## 📈 Currently Learning
 - AWS 아키텍처 설계
 - 고가용성 및 오토 스케일링
