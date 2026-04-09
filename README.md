@@ -41,10 +41,6 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
-- 데이터베이스 정규화(1NF ~ BCNF) 학습 및 적용 경험  
-- 트랜잭션 관리 및 무결성 고려 설계  
-- 인덱싱 및 쿼리 성능 최적화 학습 중  
-
 ---
 
 ###  Cloud & DevOps
