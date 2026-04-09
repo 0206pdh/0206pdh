@@ -1,12 +1,12 @@
-# 👋 Dohyun Park
+#  Dohyun Park
 
-🚀 Cloud Engineer / Backend Engineer 지향  
-🌱 AWS 기반 클라우드 인프라, DevOps, 시스템 설계 학습 중  
-📍 South Korea
+ Cloud Engineer / Backend Engineer 지향  
+ AWS 기반 클라우드 인프라, DevOps, 시스템 설계 학습 중  
+ South Korea
 
 ---
 
-## 🧑‍💻 About Me
+##  About Me
 
 클라우드 인프라, 백엔드 시스템, DevOps 분야에 관심을 두고 학습 중.  
 학업 및 개인 프로젝트를 통해 **백엔드 서비스 개발, 클라우드 네이티브 아키텍처** 경험.
@@ -17,9 +17,9 @@
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
-### 🔹 Languages
+###  Languages
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -28,7 +28,7 @@
 
 ---
 
-### 🔹 Backend & Frameworks
+###  Backend & Frameworks
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge)
@@ -37,7 +37,7 @@
 
 ---
 
-### 🔹 Database
+###  Database
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
@@ -47,7 +47,7 @@
 
 ---
 
-### 🔹 Cloud & DevOps
+###  Cloud & DevOps
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
 ![EC2](https://img.shields.io/badge/EC2-FF9900?style=for-the-badge&logo=amazon-ec2&logoColor=white)
 ![S3](https://img.shields.io/badge/S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white)
@@ -60,7 +60,7 @@
 
 ---
 
-### 🔹 Tools
+###  Tools
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
@@ -69,7 +69,7 @@
 
 ---
 
-## 📈 Currently Learning
+##  Currently Learning
 - AWS 아키텍처 설계
 - 고가용성 및 오토 스케일링
 - CI/CD 파이프라인
@@ -78,7 +78,7 @@
 
 ---
 
-## 🎯 Career Goal
+##  Career Goal
 
 확장 가능하고 안정적인  
 클라우드 인프라를 설계·운영할 수 있는  
@@ -86,7 +86,7 @@ Cloud / Infrastructure Engineer로 성장하는 것을 목표로 함.
 
 ---
 
-## 📫 Contact
-- 📧 Email: 0206pdh@naver.com  
-- 🌐 Blog:  
-- 💼 GitHub: https://github.com/0206pdh
+##  Contact
+-  Email: 0206pdh@naver.com  
+-  Blog: https://velog.io/@0206pdh/posts 
+-  GitHub: https://github.com/0206pdh
