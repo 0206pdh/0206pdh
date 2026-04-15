@@ -82,8 +82,9 @@ Cloud / Infrastructure Engineer로 성장하는 것을 목표로 함.
 
 ---
 
-##  Contact
+##  Contact & Visit
 -  Email: 0206pdh@naver.com  
 -  Blog: https://velog.io/@0206pdh/posts 
 -  GitHub: https://github.com/0206pdh
 -  Portfolio: https://portfolio-ovfc.vercel.app/
+-  Team : https://www.kimnpark.site/
