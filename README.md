@@ -62,6 +62,58 @@
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Eclipse](https://img.shields.io/badge/Eclipse-2C2255?style=for-the-badge&logo=eclipse&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![VMware](https://img.shields.io/badge/VMware-607078?style=for-the-badge&logo=vmware&logoColor=white)
+
+---
+
+## Projects
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/0206pdh/MyAgent_team">MyAgent Team</a></b> <code>Fullstack · AI Agent</code><br>
+      Team-based AI agent platform with shared context, workflow automation, approval flows, and audit logs<br><br>
+      <code>FastAPI</code> <code>PostgreSQL</code> <code>Redis</code> <code>Celery</code> <code>Next.js</code> <code>Expo</code>
+    </td>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/0206pdh/k8s-performance">Kubernetes Performance Lab</a></b> <code>Cloud · Infra</code><br>
+      Kubernetes performance lab on VMware using kubeadm, HPA, pod density, node saturation, and observability metrics<br><br>
+      <code>Kubernetes</code> <code>kubeadm</code> <code>Prometheus</code> <code>Grafana</code> <code>VMware</code>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/0206pdh/dockviz-cli">dockviz-cli</a></b> <code>DevOps · CLI</code><br>
+      Real-time terminal dashboard for monitoring Docker containers, logs, images, networks, and resource usage<br><br>
+      <code>Go</code> <code>Docker</code> <code>CLI</code> <code>Bubble Tea</code>
+    </td>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/0206pdh/dockimage_scanner">imgadvisor</a></b> <code>DevOps · CLI</code><br>
+      Dockerfile static analysis tool that detects image bloat and generates optimization recommendations<br><br>
+      <code>Python</code> <code>Docker</code> <code>CLI</code> <code>Image Optimization</code>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/0206pdh/fin_spring">Financial Event Impact System</a></b> <code>BE · AI</code><br>
+      Financial news pipeline that normalizes events with LLM workflows and calculates FX bias and sector pressure<br><br>
+      <code>FastAPI</code> <code>LangGraph</code> <code>PostgreSQL</code> <code>TimescaleDB</code> <code>Redis</code>
+    </td>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/0206pdh/velog-cli">velog-cli</a></b> <code>Automation · CLI</code><br>
+      CLI pipeline that converts study PDFs into Velog-style technical blog drafts using document parsing and LLM generation<br><br>
+      <code>Python</code> <code>OpenAI</code> <code>PDF</code> <code>Markdown</code> <code>CLI</code>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <b><a href="https://github.com/0206pdh/ToxicFree_Extension">ToxicFree Extension</a></b> <code>AI · Extension</code><br>
+      Chrome extension that filters toxic YouTube live chat messages with a local FastAPI AI model<br><br>
+      <code>FastAPI</code> <code>Chrome Extension</code> <code>Python</code> <code>Local AI</code>
+    </td>
+  </tr>
+</table>
+
 
 ---
 
