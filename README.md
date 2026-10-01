@@ -1,11 +1,10 @@
 #  Dohyun Park
 
- Cloud Engineer / Backend Engineer 지향  
- AWS 기반 클라우드 인프라, DevOps 학습 중
-
----
-
 ##  About Me
+
+- Computer and Information Engineering @ Kwangwoon University
+- Interested in AWS Cloud Infrastructure & DevOps
+- Hands-on experience with EKS, Terraform, and Argo CD
 
 ##  Contact & Visit
 -  Email: 0206pdh@naver.com  
