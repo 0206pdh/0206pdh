@@ -1,0 +1,35 @@
+name: Update profile
+
+on:
+  schedule:
+    - cron: "23 15 * * *" # 00:23 KST every day
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths: ["scripts/**", ".github/workflows/update-profile.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Render heatmap and stats SVGs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/build_profile.py ${{ github.repository_owner }}
+
+      - name: Commit refreshed SVGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/heatmap.svg assets/stats.svg
+          git diff --cached --quiet || git commit -m "chore: refresh profile SVGs [skip ci]"
+          git push
