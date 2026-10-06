@@ -1,19 +1,31 @@
 <div align="center">
 
-<h3><code>dohyun@github ~ $ ./contributions.sh</code></h3>
-
 <!-- real data, regenerated daily by .github/workflows/update-profile.yml -->
-<img src="./assets/heatmap.svg" width="860" alt="Dohyun's GitHub contribution graph" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/heatmap-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/heatmap-light.svg" />
+  <img src="./assets/heatmap-dark.svg" width="860" alt="Dohyun's GitHub contribution graph" />
+</picture>
 
 <br>
 <br>
-
-<h3><code>dohyun@github ~ $ whoami</code></h3>
 
 <table>
 <tr>
-<td valign="top"><img src="./assets/ascii.svg" width="420" alt="ASCII portrait" /></td>
-<td valign="top"><img src="./assets/stats.svg" width="420" alt="Dohyun's contribution stats" /></td>
+<td valign="top">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/ascii-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/ascii-light.svg" />
+  <img src="./assets/ascii-dark.svg" width="420" alt="ASCII portrait" />
+</picture>
+</td>
+<td valign="top">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/stats-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="./assets/stats-light.svg" />
+  <img src="./assets/stats-dark.svg" width="420" alt="Dohyun's contribution stats" />
+</picture>
+</td>
 </tr>
 </table>
 
@@ -28,8 +40,6 @@
 - Hands-on experience with EKS, Terraform, and Argo CD
 
 <div align="center">
-
-<h3><code>dohyun@github ~ $ ./links.sh</code></h3>
 
 [![Email](https://img.shields.io/badge/Email-0206pdh%40naver.com-03C75A?style=for-the-badge&logo=naver&logoColor=white)](mailto:0206pdh@naver.com)
 [![Blog](https://img.shields.io/badge/Blog-velog.io%2F%400206pdh-20C997?style=for-the-badge&logo=velog&logoColor=white)](https://velog.io/@0206pdh/posts)

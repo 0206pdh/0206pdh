@@ -1,7 +1,8 @@
 """Render the profile SVGs (contribution heatmap + stats card) from real data.
 
 Usage: GITHUB_TOKEN=... python scripts/build_profile.py [login]
-Standard library only. Writes assets/heatmap.svg and assets/stats.svg.
+Standard library only. Writes assets/{heatmap,stats}-{dark,light}.svg so the
+README can pick the one matching the viewer's theme with <picture>.
 """
 import json
 import os
@@ -13,12 +14,15 @@ from pathlib import Path
 LOGIN = sys.argv[1] if len(sys.argv) > 1 else "0206pdh"
 OUT = Path(__file__).resolve().parent.parent / "assets"
 
-BG = "#0d1117"
-PANEL = "#161b22"
-BORDER = "#30363d"
-TEXT = "#e6edf3"
-MUTED = "#8b949e"
-GREENS = ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
+# colours follow GitHub's own dark / light canvas so the cards blend into the page
+THEMES = {
+    "dark": dict(bg="#0d1117", panel="#161b22", border="#30363d", text="#e6edf3",
+                 muted="#8b949e", accent="#39d353",
+                 greens=["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]),
+    "light": dict(bg="#ffffff", panel="#f6f8fa", border="#d0d7de", text="#1f2328",
+                  muted="#656d76", accent="#1a7f37",
+                  greens=["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"]),
+}
 FONT = "ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
 MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -59,7 +63,7 @@ def level(count, peak):
     return min(4, 1 + int(3 * count / peak)) if peak else 1
 
 
-def render_heatmap(cal):
+def render_heatmap(cal, t):
     weeks = cal["weeks"]
     counts = [d["contributionCount"] for w in weeks for d in w["contributionDays"]]
     # cap the scale at the 95th percentile so one huge day doesn't flatten the rest
@@ -75,13 +79,14 @@ def render_heatmap(cal):
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" font-family="{FONT}">',
         "<style>"
-        ".c{animation:pop .35s ease-out backwards}"
-        "@keyframes pop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}"
+        ".c{animation:pop 12s ease-in-out infinite backwards}"
+        "@keyframes pop{0%,97%,100%{opacity:0;transform:scale(.3)}"
+        "3%,90%{opacity:1;transform:scale(1)}}"
         ".c{transform-box:fill-box;transform-origin:center}"
         "</style>",
-        f'<rect x=".5" y=".5" width="{width - 1}" height="{height - 1}" rx="10" fill="{BG}" stroke="{BORDER}"/>',
-        f'<text x="{left}" y="28" fill="{TEXT}" font-size="14">'
-        f'<tspan fill="#39d353">{cal["totalContributions"]:,}</tspan>'
+        f'<rect x=".5" y=".5" width="{width - 1}" height="{height - 1}" rx="10" fill="{t["bg"]}" stroke="{t["border"]}"/>',
+        f'<text x="{left}" y="28" fill="{t["text"]}" font-size="14">'
+        f'<tspan fill="{t["accent"]}">{cal["totalContributions"]:,}</tspan>'
         " contributions in the last year</text>",
     ]
 
@@ -90,37 +95,37 @@ def render_heatmap(cal):
         first = date.fromisoformat(week["contributionDays"][0]["date"])
         if first.month != last_month and x < len(weeks) - 2:
             parts.append(
-                f'<text x="{left + x * step}" y="{top - 8}" fill="{MUTED}" '
+                f'<text x="{left + x * step}" y="{top - 8}" fill="{t["muted"]}" '
                 f'font-size="10">{MONTHS[first.month - 1]}</text>'
             )
             last_month = first.month
         for day in week["contributionDays"]:
             y = day["weekday"]
             lv = level(day["contributionCount"], peak)
-            delay = x * 0.025 + y * 0.012
+            delay = x * 0.04 + y * 0.015
             parts.append(
                 f'<rect class="c" style="animation-delay:{delay:.3f}s" '
                 f'x="{left + x * step}" y="{top + y * step}" width="{cell}" '
-                f'height="{cell}" rx="2.5" fill="{GREENS[lv]}">'
+                f'height="{cell}" rx="2.5" fill="{t["greens"][lv]}">'
                 f'<title>{day["date"]}: {day["contributionCount"]}</title></rect>'
             )
 
     for y, label in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
         parts.append(
-            f'<text x="12" y="{top + y * step + 10}" fill="{MUTED}" '
+            f'<text x="12" y="{top + y * step + 10}" fill="{t["muted"]}" '
             f'font-size="10">{label}</text>'
         )
 
     legend_y = top + 7 * step + 14
     legend_x = width - 20 - 5 * step - 70
-    parts.append(f'<text x="{legend_x}" y="{legend_y + 10}" fill="{MUTED}" font-size="10">Less</text>')
-    for i, color in enumerate(GREENS):
+    parts.append(f'<text x="{legend_x}" y="{legend_y + 10}" fill="{t["muted"]}" font-size="10">Less</text>')
+    for i, color in enumerate(t["greens"]):
         parts.append(
             f'<rect x="{legend_x + 32 + i * step}" y="{legend_y}" width="{cell}" '
             f'height="{cell}" rx="2.5" fill="{color}"/>'
         )
     parts.append(
-        f'<text x="{legend_x + 36 + 5 * step}" y="{legend_y + 10}" fill="{MUTED}" '
+        f'<text x="{legend_x + 36 + 5 * step}" y="{legend_y + 10}" fill="{t["muted"]}" '
         'font-size="10">More</text>'
     )
     parts.append("</svg>")
@@ -142,7 +147,7 @@ def streaks(days):
     return current, longest
 
 
-def render_stats(cal):
+def render_stats(cal, t):
     days = [d for w in cal["weeks"] for d in w["contributionDays"]]
     current, longest = streaks(days)
     active = sum(1 for d in days if d["contributionCount"])
@@ -167,28 +172,29 @@ def render_stats(cal):
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}" font-family="{FONT}">',
         "<style>"
-        ".b{transform-box:fill-box;transform-origin:bottom;animation:grow .8s ease-out both}"
-        "@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}"
+        ".b{transform-box:fill-box;transform-origin:bottom;"
+        "animation:grow 12s ease-in-out infinite backwards}"
+        "@keyframes grow{0%,98%,100%{transform:scaleY(0)}8%,90%{transform:scaleY(1)}}"
         "</style>",
-        f'<rect x=".5" y=".5" width="{width - 1}" height="{height - 1}" rx="10" fill="{BG}" stroke="{BORDER}"/>',
+        f'<rect x=".5" y=".5" width="{width - 1}" height="{height - 1}" rx="10" fill="{t["bg"]}" stroke="{t["border"]}"/>',
     ]
     for i, (value, label, sub) in enumerate(tiles):
         x = pad + (i % 2) * (tile_w + tile_gap)
         y = pad + (i // 2) * (tile_h + tile_gap)
         parts += [
             f'<rect x="{x}" y="{y}" width="{tile_w}" height="{tile_h}" rx="8" '
-            f'fill="{PANEL}" stroke="{BORDER}"/>',
-            f'<text x="{x + 24}" y="{y + 60}" fill="#39d353" font-size="44" '
+            f'fill="{t["panel"]}" stroke="{t["border"]}"/>',
+            f'<text x="{x + 24}" y="{y + 60}" fill="{t["accent"]}" font-size="44" '
             f'font-weight="700">{value}</text>',
-            f'<text x="{x + 24}" y="{y + 90}" fill="{TEXT}" font-size="18">{label}</text>',
-            f'<text x="{x + 24}" y="{y + 110}" fill="{MUTED}" font-size="14">{sub}</text>',
+            f'<text x="{x + 24}" y="{y + 90}" fill="{t["text"]}" font-size="18">{label}</text>',
+            f'<text x="{x + 24}" y="{y + 110}" fill="{t["muted"]}" font-size="14">{sub}</text>',
         ]
 
     chart_top = pad + 3 * (tile_h + tile_gap) + 36
     chart_bottom = height - pad - 28
     chart_h = chart_bottom - chart_top
     parts.append(
-        f'<text x="{pad}" y="{chart_top - 14}" fill="{MUTED}" font-size="16">'
+        f'<text x="{pad}" y="{chart_top - 14}" fill="{t["muted"]}" font-size="16">'
         "contributions per month</text>"
     )
     slot = (width - 2 * pad) / len(months)
@@ -200,9 +206,9 @@ def render_stats(cal):
         parts += [
             f'<rect class="b" style="animation-delay:{i * 0.06:.2f}s" x="{x:.1f}" '
             f'y="{chart_bottom - h:.1f}" width="{bar_w:.1f}" height="{h:.1f}" rx="3" '
-            f'fill="{GREENS[2 + (monthly[m] * 2 >= top_value)]}">'
+            f'fill="{t["greens"][2 + (monthly[m] * 2 >= top_value)]}">'
             f"<title>{m}: {monthly[m]}</title></rect>",
-            f'<text x="{x + bar_w / 2:.1f}" y="{chart_bottom + 20}" fill="{MUTED}" '
+            f'<text x="{x + bar_w / 2:.1f}" y="{chart_bottom + 20}" fill="{t["muted"]}" '
             f'font-size="13" text-anchor="middle">{MONTHS[int(m[5:]) - 1]}</text>',
         ]
     parts.append("</svg>")
@@ -212,9 +218,10 @@ def render_stats(cal):
 def main():
     cal = fetch_calendar()
     OUT.mkdir(exist_ok=True)
-    (OUT / "heatmap.svg").write_text(render_heatmap(cal), encoding="utf-8")
-    (OUT / "stats.svg").write_text(render_stats(cal), encoding="utf-8")
-    print(f"rendered heatmap.svg + stats.svg for {LOGIN} "
+    for name, theme in THEMES.items():
+        (OUT / f"heatmap-{name}.svg").write_text(render_heatmap(cal, theme), encoding="utf-8")
+        (OUT / f"stats-{name}.svg").write_text(render_stats(cal, theme), encoding="utf-8")
+    print(f"rendered heatmap + stats SVGs for {LOGIN} "
           f"({cal['totalContributions']} contributions)")
 
 
