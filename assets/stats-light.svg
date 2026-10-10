@@ -2,11 +2,11 @@
 <style>.b{transform-box:fill-box;transform-origin:bottom;animation:grow 12s ease-in-out infinite backwards}@keyframes grow{0%,98%,100%{transform:scaleY(0)}8%,90%{transform:scaleY(1)}}</style>
 <rect x=".5" y=".5" width="839" height="719" rx="10" fill="#ffffff" stroke="#d0d7de"/>
 <rect x="32.0" y="32" width="376.0" height="124" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
-<text x="56.0" y="92" fill="#1a7f37" font-size="44" font-weight="700">1,446</text>
+<text x="56.0" y="92" fill="#1a7f37" font-size="44" font-weight="700">1,447</text>
 <text x="56.0" y="122" fill="#1f2328" font-size="18">contributions</text>
 <text x="56.0" y="142" fill="#656d76" font-size="14">last 12 months</text>
 <rect x="432.0" y="32" width="376.0" height="124" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
-<text x="456.0" y="92" fill="#1a7f37" font-size="44" font-weight="700">0</text>
+<text x="456.0" y="92" fill="#1a7f37" font-size="44" font-weight="700">1</text>
 <text x="456.0" y="122" fill="#1f2328" font-size="18">current streak</text>
 <text x="456.0" y="142" fill="#656d76" font-size="14">days in a row</text>
 <rect x="32.0" y="180" width="376.0" height="124" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
@@ -14,15 +14,15 @@
 <text x="56.0" y="270" fill="#1f2328" font-size="18">longest streak</text>
 <text x="56.0" y="290" fill="#656d76" font-size="14">days in a row</text>
 <rect x="432.0" y="180" width="376.0" height="124" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
-<text x="456.0" y="240" fill="#1a7f37" font-size="44" font-weight="700">124</text>
+<text x="456.0" y="240" fill="#1a7f37" font-size="44" font-weight="700">125</text>
 <text x="456.0" y="270" fill="#1f2328" font-size="18">active days</text>
-<text x="456.0" y="290" fill="#656d76" font-size="14">of 370</text>
+<text x="456.0" y="290" fill="#656d76" font-size="14">of 371</text>
 <rect x="32.0" y="328" width="376.0" height="124" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
 <text x="56.0" y="388" fill="#1a7f37" font-size="44" font-weight="700">70</text>
 <text x="56.0" y="418" fill="#1f2328" font-size="18">best day</text>
 <text x="56.0" y="438" fill="#656d76" font-size="14">2026-06-22</text>
 <rect x="432.0" y="328" width="376.0" height="124" rx="8" fill="#f6f8fa" stroke="#d0d7de"/>
-<text x="456.0" y="388" fill="#1a7f37" font-size="44" font-weight="700">11.7</text>
+<text x="456.0" y="388" fill="#1a7f37" font-size="44" font-weight="700">11.6</text>
 <text x="456.0" y="418" fill="#1f2328" font-size="18">avg / active day</text>
 <text x="456.0" y="438" fill="#656d76" font-size="14">contributions</text>
 <text x="32" y="498" fill="#656d76" font-size="16">contributions per month</text>
@@ -48,6 +48,6 @@
 <text x="646.3" y="680" fill="#656d76" font-size="13" text-anchor="middle">Aug</text>
 <rect class="b" style="animation-delay:0.60s" x="691.0" y="656.3" width="40.1" height="3.7" rx="3" fill="#40c463"><title>2026-09: 17</title></rect>
 <text x="711.0" y="680" fill="#656d76" font-size="13" text-anchor="middle">Sep</text>
-<rect class="b" style="animation-delay:0.66s" x="755.6" y="658.0" width="40.1" height="2.0" rx="3" fill="#40c463"><title>2026-10: 6</title></rect>
+<rect class="b" style="animation-delay:0.66s" x="755.6" y="658.0" width="40.1" height="2.0" rx="3" fill="#40c463"><title>2026-10: 7</title></rect>
 <text x="775.7" y="680" fill="#656d76" font-size="13" text-anchor="middle">Oct</text>
 </svg>
