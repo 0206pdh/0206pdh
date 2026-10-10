@@ -39,10 +39,7 @@
 - Interested in AWS Cloud Infrastructure & DevOps
 - Hands-on experience with EKS, Terraform, and Argo CD
 
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-0206pdh%40naver.com-03C75A?style=for-the-badge&logo=naver&logoColor=white)](mailto:0206pdh@naver.com)
-[![Blog](https://img.shields.io/badge/Blog-velog.io%2F%400206pdh-20C997?style=for-the-badge&logo=velog&logoColor=white)](https://velog.io/@0206pdh/posts)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Utter_AI-2EA44F?style=for-the-badge&logo=vercel&logoColor=white)](https://dohyun-portfolio.vercel.app/)<br>
+[![Email](https://img.shields.io/badge/Email-0206pdh%40naver.com-03C75A?style=for-the-badge&logo=naver&logoColor=white)](mailto:0206pdh@naver.com)<br>
+[![Blog](https://img.shields.io/badge/Blog-velog.io%2F%400206pdh-20C997?style=for-the-badge&logo=velog&logoColor=white)](https://velog.io/@0206pdh/posts)<br>
 [![GitHub](https://img.shields.io/badge/GitHub-0206pdh-0d1117?style=for-the-badge&logo=github&logoColor=white)](https://github.com/0206pdh)
-
-</div>
