@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="859" height="207" viewBox="0 0 859 207" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace">
 <style>.c{animation:pop 12s ease-in-out infinite backwards}@keyframes pop{0%,97%,100%{opacity:0;transform:scale(.3)}3%,90%{opacity:1;transform:scale(1)}}.c{transform-box:fill-box;transform-origin:center}</style>
 <rect x=".5" y=".5" width="858" height="206" rx="10" fill="#ffffff" stroke="#d0d7de"/>
-<text x="44" y="28" fill="#1f2328" font-size="14"><tspan fill="#1a7f37">1,443</tspan> contributions in the last year</text>
+<text x="44" y="28" fill="#1f2328" font-size="14"><tspan fill="#1a7f37">1,442</tspan> contributions in the last year</text>
 <text x="44" y="50" fill="#656d76" font-size="10">Oct</text>
 <rect class="c" style="animation-delay:0.000s" x="44" y="58" width="12" height="12" rx="2.5" fill="#ebedf0"><title>2025-10-19: 0</title></rect>
 <rect class="c" style="animation-delay:0.015s" x="44" y="73" width="12" height="12" rx="2.5" fill="#ebedf0"><title>2025-10-20: 0</title></rect>
@@ -380,6 +380,7 @@
 <rect class="c" style="animation-delay:2.115s" x="809" y="133" width="12" height="12" rx="2.5" fill="#ebedf0"><title>2026-10-16: 0</title></rect>
 <rect class="c" style="animation-delay:2.130s" x="809" y="148" width="12" height="12" rx="2.5" fill="#ebedf0"><title>2026-10-17: 0</title></rect>
 <rect class="c" style="animation-delay:2.080s" x="824" y="58" width="12" height="12" rx="2.5" fill="#ebedf0"><title>2026-10-18: 0</title></rect>
+<rect class="c" style="animation-delay:2.095s" x="824" y="73" width="12" height="12" rx="2.5" fill="#ebedf0"><title>2026-10-19: 0</title></rect>
 <text x="12" y="83" fill="#656d76" font-size="10">Mon</text>
 <text x="12" y="113" fill="#656d76" font-size="10">Wed</text>
 <text x="12" y="143" fill="#656d76" font-size="10">Fri</text>
